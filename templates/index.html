@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cold Chain Dashboard</title>
+</head>
+
+<body style="text-align:center; font-family:Arial;">
+
+<h1>🧊 Cold Chain Dashboard</h1>
+
+<h2>🌡️ Temperature: <span id="temp">--</span></h2>
+<h2>⚠️ Risk: <span id="risk">--</span></h2>
+<h2>🧠 Prediction: <span id="prediction">--</span></h2>
+<h2>💰 Loss: <span id="loss">--</span></h2>
+
+<script>
+setInterval(()=>{
+fetch('/data')
+.then(res=>res.json())
+.then(data=>{
+document.getElementById("temp").innerText = data.temp + " °C";
+document.getElementById("risk").innerText = data.risk;
+document.getElementById("prediction").innerText = data.prediction;
+document.getElementById("loss").innerText = data.loss;
+});
+},2000);
+</script>
+
+</body>
+</html>
