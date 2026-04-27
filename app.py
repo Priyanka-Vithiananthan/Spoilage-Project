@@ -1,7 +1,11 @@
 from flask import Flask, render_template, jsonify
 import random, time
 
+current_temp = 6.0
+current_humidity = 70
+
 app = Flask(__name__)
+
 
 def get_risk(temp):
     if temp > 8:
@@ -31,14 +35,29 @@ def home():
 
 @app.route('/data')
 def data():
-    temp = round(random.uniform(3,10),2)
-    risk = get_risk(temp)
+    temp = round(random.uniform(3, 10), 5)
+    humidity = random.randint(50, 95)
+
+    # Rule-based risk (reliable)
+    if temp > 8 or humidity > 80:
+        risk = "HIGH RISK ⚠️"
+        prediction = "Spoilage likely"
+        loss_val = "₹10000"
+    elif temp > 6:
+        risk = "MEDIUM RISK"
+        prediction = "Monitor closely"
+        loss_val = "₹3000"
+    else:
+        risk = "SAFE"
+        prediction = "No spoilage expected"
+        loss_val = "₹0"
 
     return jsonify({
         "temp": temp,
+        "humidity": humidity,
         "risk": risk,
-        "prediction": predict(temp),
-        "loss": loss(risk)
+        "prediction": prediction,
+        "loss": loss_val
     })
 
 import os
