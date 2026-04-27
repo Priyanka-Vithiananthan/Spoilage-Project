@@ -1,8 +1,7 @@
-Perishable Spoilage Early Warning System
 🧊 Cold Chain Spoilage Detection System
 
 ## 📌 Problem
--Temperature fluctuations during transport/storage lead to food spoilage and economic loss.
+-Temperature fluctuations during transport and storage lead to food spoilage and economic loss.
 
 ---
 
@@ -57,9 +56,19 @@ The system simulates sensor data and applies rule-based logic:
 
 ---
 
+## 📊 Impact
+
+- Reduces food spoilage losses  
+- Improves supply chain efficiency  
+- Enables early decision-making  
+- Enhances food safety monitoring
+
+---
+
 ## ▶️ Run Locally
 
-bash
+</>Bash 
+
 pip install -r requirements.txt
 python app.py
 
