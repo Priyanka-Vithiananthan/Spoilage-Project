@@ -26,8 +26,18 @@ Perishable Spoilage Early Warning System
 
 ---
 
-## 📸 Screenshot
+## 📸 Screenshots
 
+### 🧊 Dashboard
+![Dashboard](dashboard.jpeg)
+
+### 📊 Graph
+![Graph](graph.jpeg)
+
+### 🚨 Alert
+![Alert](alert.jpeg)
+
+---
 
 ## 🛠️ Tech Stack
 
